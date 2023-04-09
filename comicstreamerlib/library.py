@@ -149,7 +149,7 @@ class Library:
             comic.day = md.day
 
             if md.volume is not None:
-                comic.volume = int(md.volume)
+                comic.volume = int(md.volume or 1)
             if md.publisher is not None:
                 comic.publisher = unicode(md.publisher)
             if md.title is not None:

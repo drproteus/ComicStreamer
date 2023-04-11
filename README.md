@@ -1,18 +1,29 @@
-#### Work on this fork (september 5 2015)
- - added webroot option to configuration, useful for proxy pass configurations (issue #24)
- - little unrar automation: after pip installation, run `paver libunrar'
-   to automatically fetch compile and install the unrar library.
- - now the scanning component ignores hidden (dot) files (issue #26)
- - added new logo from blindpet (issue #27)
- - upgraded to latest releases of various dependent packages
-#### Work on this fork (april 5 2015)
+This fork of a fork adds some duct-tape fixes and Docker support.
 
- - refactoring database access in a Library object (see library branch)
- - fulltext indexing and faceting support using whoosh (see whoosh branch)
- - mobile optimized user interface based on angularjs and bootstrap. Designed
-   to work with the new search api with facet support
+## Docker
+A suggested `docker-compose.yml` is included. It expects an environment variable `COMICS_PATH` to define the path to your comics which will mount at `/comics` within the container. Once launched, add `/comics` in the configure path (http://localhost:32500/configure).
 
-All of these features are **experimental** and still unfinished.
+`COMICS_PATH=/mnt/media/comics docker-compose up -d`
+
+Accessible by default at http://localhost:32500.
+
+## Original README
+from https://github.com/davide-romanini/ComicStreamer
+> #### Work on this fork (september 5 2015)
+>  - added webroot option to configuration, useful for proxy pass configurations (issue #24)
+>  - little unrar automation: after pip installation, run `paver libunrar'
+>    to automatically fetch compile and install the unrar library.
+>  - now the scanning component ignores hidden (dot) files (issue #26)
+>  - added new logo from blindpet (issue #27)
+>  - upgraded to latest releases of various dependent packages
+> #### Work on this fork (april 5 2015)
+>
+>  - refactoring database access in a Library object (see library branch)
+>  - fulltext indexing and faceting support using whoosh (see whoosh branch)
+>  - mobile optimized user interface based on angularjs and bootstrap. Designed
+>    to work with the new search api with facet support
+>
+> All of these features are **experimental** and still unfinished.
 
 -----
 #### Introduction
@@ -48,7 +59,7 @@ please contact me if you need any special support or features.
 
 ----------
 
-#### Requirements (for running from source) 
+#### Requirements (for running from source)
 
 * python 2.7
 
@@ -94,4 +105,3 @@ Some tips:
 
 * Use "--help" option to list command-line options
 * Use the "--reset" option (CLI) or control page "Rebuild Database" to wipe the database if you're having problems.
-

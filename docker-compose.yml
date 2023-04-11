@@ -1,0 +1,14 @@
+version: "3.3"
+volumes:
+  config:
+services:
+  comicstreamer:
+    image: comicstreamer:latest
+    restart: unless-stopped
+    build:
+      context: .
+    ports:
+      - 32500:32500
+    volumes:
+      - config:/root/.ComicStreamer
+      - $COMICS_PATH:/comics
